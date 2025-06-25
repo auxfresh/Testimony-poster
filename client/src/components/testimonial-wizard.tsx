@@ -439,7 +439,7 @@ export default function TestimonialWizard() {
                 disabled={createTestimonialMutation.isPending}
                 className="px-12 py-4 rounded-2xl font-semibold"
               >
-                {createTestimonialMutation.isPending ? "Creating..." : "Continue to Preview"}
+                {createTestimonialMutation.isPending ? "Creating..." : "Continue"}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </div>
