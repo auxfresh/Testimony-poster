@@ -62,7 +62,7 @@
   --card-foreground: hsl(20, 14.3%, 4.1%);
   --border: hsl(20, 5.9%, 90%);
   --input: hsl(20, 5.9%, 90%);
-  --primary: hsl(0, 84.2%, 60.2%);
+  --primary: hsl(345, 82%, 52%);
   --primary-foreground: hsl(210, 40%, 98%);
   --secondary: hsl(60, 4.8%, 95.9%);
   --secondary-foreground: hsl(24, 9.8%, 10%);
@@ -72,7 +72,7 @@
   --destructive-foreground: hsl(60, 9.1%, 97.8%);
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
-  
+
   /* Custom variables for testimonial app */
   --testimonial-primary: hsl(0, 84.2%, 60.2%);
   --testimonial-accent: hsl(328, 85.5%, 70%);
@@ -92,7 +92,7 @@
   --card-foreground: hsl(0, 0%, 98%);
   --border: hsl(240, 3.7%, 15.9%);
   --input: hsl(240, 3.7%, 15.9%);
-  --primary: hsl(0, 84.2%, 60.2%);
+  --primary: hsl(345, 82%, 52%);
   --primary-foreground: hsl(210, 40%, 98%);
   --secondary: hsl(240, 3.7%, 15.9%);
   --secondary-foreground: hsl(0, 0%, 98%);
@@ -179,11 +179,11 @@
   .font-inter {
     font-family: 'Inter', sans-serif;
   }
-  
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   .animate-pulse-slow {
     animation: pulse 3s ease-in-out infinite;
   }
