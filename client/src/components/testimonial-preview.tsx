@@ -1,6 +1,18 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, ThumbsUp } from "lucide-react";
-import type { TestimonialData } from "@/components/testimonial-wizard";
+
+interface TestimonialData {
+  content?: string;
+  customerName?: string;
+  customerRole?: string;
+  customerCompany?: string;
+  customerAvatar?: string;
+  rating?: number;
+  theme?: string;
+  primaryColor?: string;
+  fontFamily?: string;
+  backgroundType?: string;
+}
 
 interface TestimonialPreviewProps {
   testimonial: TestimonialData;
