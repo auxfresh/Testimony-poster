@@ -66,7 +66,7 @@ export default function TestimonialPreview({ testimonial }: TestimonialPreviewPr
           </span>
         </div>
         
-        <p className="text-gray-800 mb-6 leading-relaxed">
+        <p className="text-gray-800 mb-6 leading-relaxed break-words">
           {testimonial.content || "Enter your testimonial content to see it displayed here"}
         </p>
         

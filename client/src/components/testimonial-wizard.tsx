@@ -457,14 +457,14 @@ export default function TestimonialWizard() {
               <TestimonialPreview testimonial={testimonialData} />
             </div>
             
-            <div className="flex flex-col sm:flex-row justify-between mt-6 sm:mt-8 gap-4">
-              <Button variant="outline" onClick={handlePrevious} className="px-6 sm:px-8 py-3 sm:py-4 rounded-2xl w-full sm:w-auto order-2 sm:order-1">
+            <div className="flex flex-col sm:flex-row justify-between mt-6 sm:mt-8 gap-4 max-w-full">
+              <Button variant="outline" onClick={handlePrevious} className="px-6 sm:px-8 py-3 sm:py-4 rounded-2xl w-full sm:w-auto order-2 sm:order-1 max-w-full">
                 <ArrowLeft className="mr-2 w-4 h-4" />
                 Previous
               </Button>
-              <Button onClick={handleNext} className="px-6 sm:px-12 py-3 sm:py-4 rounded-2xl font-semibold w-full sm:w-auto order-1 sm:order-2">
-                Continue to Export
-                <ArrowRight className="ml-2 w-4 h-4" />
+              <Button onClick={handleNext} className="px-6 sm:px-12 py-3 sm:py-4 rounded-2xl font-semibold w-full sm:w-auto order-1 sm:order-2 max-w-full overflow-hidden">
+                <span className="truncate">Continue to Export</span>
+                <ArrowRight className="ml-2 w-4 h-4 flex-shrink-0" />
               </Button>
             </div>
           </CardContent>
