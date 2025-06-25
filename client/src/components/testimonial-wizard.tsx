@@ -429,7 +429,9 @@ export default function TestimonialWizard() {
               </div>
             </div>
 
-            <div className="flex justify-between mt-8">
+            </CardContent>
+          <div className="p-8 pt-0">
+            <div className="flex justify-between">
               <Button variant="outline" onClick={handlePrevious} className="px-8 py-4 rounded-2xl">
                 <ArrowLeft className="mr-2 w-4 h-4" />
                 Previous
@@ -443,7 +445,7 @@ export default function TestimonialWizard() {
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </div>
-          </CardContent>
+          </div>
         </Card>
       )}
 
