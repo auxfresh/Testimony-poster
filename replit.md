@@ -107,6 +107,14 @@ The application is configured for deployment on Replit's autoscale platform:
   - Tutorial restart option in header
   - Tutorial covers all major features: input methods, customization, preview, export
 
+- June 25, 2025: Prepared application for Netlify deployment
+  - Created netlify.toml configuration for build and redirects
+  - Converted server routes to Netlify functions
+  - Added serverless-http adapter for Express app
+  - Optimized Vite build configuration with code splitting
+  - Created production-ready package.json scripts
+  - Added comprehensive README with deployment instructions
+
 ## Changelog
 
 - June 25, 2025: Initial setup with complete testimonial generator
