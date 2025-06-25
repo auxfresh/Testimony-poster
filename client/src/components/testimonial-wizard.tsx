@@ -437,7 +437,8 @@ export default function TestimonialWizard() {
               <Button 
                 onClick={handleNext}
                 disabled={createTestimonialMutation.isPending}
-                className="px-12 py-4 rounded-2xl font-semibold"
+                className="px-2
+ py-1 rounded-2xl font-small"
               >
                 {createTestimonialMutation.isPending ? "Creating..." : "Continue"}
                 <ArrowRight className="ml-2 w-4 h-4" />
