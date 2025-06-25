@@ -66,7 +66,9 @@ export default function TestimonialPreview({ testimonial }: TestimonialPreviewPr
           </span>
         </div>
         
-        <p className="text-gray-800 mb-6 leading-relaxed break-words">
+        <p className={`mb-6 leading-relaxed break-words ${
+          testimonial.theme === 'glassmorphic' ? 'text-white' : 'text-gray-800'
+        }`}>
           {testimonial.content || "Enter your testimonial content to see it displayed here"}
         </p>
         
@@ -81,10 +83,14 @@ export default function TestimonialPreview({ testimonial }: TestimonialPreviewPr
               }}
             />
             <div className="ml-3">
-              <h4 className="font-semibold text-gray-900">
+              <h4 className={`font-semibold ${
+                testimonial.theme === 'glassmorphic' ? 'text-white' : 'text-gray-900'
+              }`}>
                 {testimonial.customerName || "Enter customer name"}
               </h4>
-              <p className="text-sm text-gray-500">
+              <p className={`text-sm ${
+                testimonial.theme === 'glassmorphic' ? 'text-gray-200' : 'text-gray-500'
+              }`}>
                 {testimonial.customerRole && testimonial.customerCompany
                   ? `${testimonial.customerRole} at ${testimonial.customerCompany}`
                   : testimonial.customerRole || testimonial.customerCompany || "Enter role/company"}

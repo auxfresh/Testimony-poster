@@ -99,7 +99,7 @@ export async function generateTestimonialImage(
   const maxWidth = cardWidth - 80;
   const content = testimonial.content || "Enter your testimonial content to see it displayed here";
   
-  ctx.fillStyle = "#374151";
+  ctx.fillStyle = testimonial.theme === 'glassmorphic' ? "#ffffff" : "#374151";
   ctx.font = bodyFont;
   ctx.textAlign = "left";
   
@@ -134,11 +134,11 @@ export async function generateTestimonialImage(
   ctx.fill();
 
   // Customer name and details
-  ctx.fillStyle = "#111827";
+  ctx.fillStyle = testimonial.theme === 'glassmorphic' ? "#ffffff" : "#111827";
   ctx.font = `bold ${Math.floor(options.width * 0.018)}px Inter, sans-serif`;
   ctx.fillText(testimonial.customerName || "Enter customer name", cardX + 40 + 60, customerY + 20);
 
-  ctx.fillStyle = "#6b7280";
+  ctx.fillStyle = testimonial.theme === 'glassmorphic' ? "#e5e7eb" : "#6b7280";
   ctx.font = smallFont;
   const roleCompany = testimonial.customerRole && testimonial.customerCompany
     ? `${testimonial.customerRole} at ${testimonial.customerCompany}`
