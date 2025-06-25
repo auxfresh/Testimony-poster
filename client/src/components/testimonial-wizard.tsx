@@ -195,11 +195,11 @@ export default function TestimonialWizard() {
       {currentStep === "content" && (
         <Card className="shadow-xl border border-gray-100">
           <CardHeader>
-            <CardTitle className="text-2xl text-center">Add Your Testimonial Content</CardTitle>
+            <CardTitle className="text-xl sm:text-2xl text-center px-4">Add Your Testimonial Content</CardTitle>
           </CardHeader>
-          <CardContent className="p-8">
+          <CardContent className="p-4 sm:p-6 lg:p-8">
             {/* Input Method Selection */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8" data-tutorial="input-methods">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6 sm:mb-8" data-tutorial="input-methods">
               <button
                 onClick={() => setInputMethod("text")}
                 className={`p-6 border-2 rounded-2xl transition-all group ${
@@ -336,7 +336,7 @@ export default function TestimonialWizard() {
           <CardContent className="p-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Left: Customization Options */}
-              <div className="space-y-8">
+              <div className="space-y-6 lg:space-y-8">
                 {/* Customer Information */}
                 <div data-tutorial="customer-info">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Customer Information</h3>
@@ -450,19 +450,19 @@ export default function TestimonialWizard() {
       {currentStep === "preview" && (
         <Card className="shadow-xl border border-gray-100">
           <CardHeader>
-            <CardTitle className="text-2xl text-center">Preview Your Testimonial</CardTitle>
+            <CardTitle className="text-xl sm:text-2xl text-center px-4">Preview Your Testimonial</CardTitle>
           </CardHeader>
-          <CardContent className="p-8">
+          <CardContent className="p-4 sm:p-6 lg:p-8">
             <div className="max-w-2xl mx-auto">
               <TestimonialPreview testimonial={testimonialData} />
             </div>
             
-            <div className="flex justify-between mt-8">
-              <Button variant="outline" onClick={handlePrevious} className="px-8 py-4 rounded-2xl">
+            <div className="flex flex-col sm:flex-row justify-between mt-6 sm:mt-8 gap-4">
+              <Button variant="outline" onClick={handlePrevious} className="px-6 sm:px-8 py-3 sm:py-4 rounded-2xl w-full sm:w-auto order-2 sm:order-1">
                 <ArrowLeft className="mr-2 w-4 h-4" />
                 Previous
               </Button>
-              <Button onClick={handleNext} className="px-12 py-4 rounded-2xl font-semibold">
+              <Button onClick={handleNext} className="px-6 sm:px-12 py-3 sm:py-4 rounded-2xl font-semibold w-full sm:w-auto order-1 sm:order-2">
                 Continue to Export
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>

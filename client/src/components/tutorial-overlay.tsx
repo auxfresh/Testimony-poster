@@ -199,7 +199,7 @@ export default function TutorialOverlay({ isVisible, onComplete, onSkip }: Tutor
       )}
 
       {/* Tutorial Card */}
-      <Card className="w-80 shadow-2xl border-2 border-primary" style={getTooltipPosition()}>
+      <Card className="w-72 sm:w-80 mx-4 shadow-2xl border-2 border-primary" style={getTooltipPosition()}>
         <CardContent className="p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center space-x-2">
