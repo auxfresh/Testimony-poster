@@ -14,6 +14,7 @@ import AvatarSelector from "./avatar-selector";
 import TestimonialPreview from "./testimonial-preview";
 import ExportPanel from "./export-panel";
 import { parseSocialUrl } from "@/lib/social-parser";
+import TutorialOverlay from "./tutorial-overlay";
 import type { InsertTestimonial } from "@shared/schema";
 
 type WizardStep = "content" | "customize" | "preview" | "export";
@@ -25,6 +26,10 @@ interface TestimonialData extends Partial<InsertTestimonial> {
 export default function TestimonialWizard() {
   const [currentStep, setCurrentStep] = useState<WizardStep>("content");
   const [inputMethod, setInputMethod] = useState<"text" | "url" | "image">("url");
+  const [showTutorial, setShowTutorial] = useState(() => {
+    // Check if user has seen tutorial before
+    return !localStorage.getItem("testimonyshot-tutorial-completed");
+  });
   const [testimonialData, setTestimonialData] = useState<TestimonialData>({
     content: "",
     customerName: "",
@@ -145,6 +150,16 @@ export default function TestimonialWizard() {
     return true;
   };
 
+  const handleTutorialComplete = () => {
+    localStorage.setItem("testimonyshot-tutorial-completed", "true");
+    setShowTutorial(false);
+  };
+
+  const handleTutorialSkip = () => {
+    localStorage.setItem("testimonyshot-tutorial-completed", "true");
+    setShowTutorial(false);
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Progress Steps */}
@@ -184,7 +199,7 @@ export default function TestimonialWizard() {
           </CardHeader>
           <CardContent className="p-8">
             {/* Input Method Selection */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8" data-tutorial="input-methods">
               <button
                 onClick={() => setInputMethod("text")}
                 className={`p-6 border-2 rounded-2xl transition-all group ${
@@ -238,7 +253,7 @@ export default function TestimonialWizard() {
             {/* Input Content */}
             <div className="space-y-6">
               {inputMethod === "url" && (
-                <div>
+                <div data-tutorial="social-url">
                   <Label className="text-sm font-medium text-gray-700">Social Media URL</Label>
                   <Input
                     type="url"
@@ -323,7 +338,7 @@ export default function TestimonialWizard() {
               {/* Left: Customization Options */}
               <div className="space-y-8">
                 {/* Customer Information */}
-                <div>
+                <div data-tutorial="customer-info">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Customer Information</h3>
                   <div className="space-y-4">
                     <div>
@@ -354,7 +369,7 @@ export default function TestimonialWizard() {
                 </div>
 
                 {/* Rating */}
-                <div>
+                <div data-tutorial="rating">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Rating (1-5 stars)</h3>
                   <div className="flex space-x-2">
                     {[1, 2, 3, 4, 5].map((rating) => (
@@ -374,10 +389,12 @@ export default function TestimonialWizard() {
                 </div>
 
                 {/* Avatar Selection */}
-                <AvatarSelector
+                <div data-tutorial="avatar-selection">
+                  <AvatarSelector
                   selectedAvatar={testimonialData.customerAvatar}
                   onAvatarChange={(avatar) => setTestimonialData(prev => ({ ...prev, customerAvatar: avatar }))}
-                />
+                  />
+                </div>
 
                 {/* Font Selection */}
                 <div>
@@ -455,12 +472,21 @@ export default function TestimonialWizard() {
       )}
 
       {currentStep === "export" && testimonialData.id && (
-        <ExportPanel 
+        <div data-tutorial="export-formats">
+          <ExportPanel 
           testimonialId={testimonialData.id}
           testimonial={testimonialData}
           onPrevious={handlePrevious}
-        />
+          />
+        </div>
       )}
+
+      {/* Tutorial Overlay */}
+      <TutorialOverlay
+        isVisible={showTutorial}
+        onComplete={handleTutorialComplete}
+        onSkip={handleTutorialSkip}
+      />
     </div>
   );
 }

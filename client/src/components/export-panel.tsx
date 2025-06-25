@@ -284,7 +284,7 @@ export default function ExportPanel({ testimonialId, testimonial, onPrevious }: 
             Previous
           </Button>
           
-          <div className="flex gap-4">
+          <div className="flex gap-4" data-tutorial="download">
             <Button
               onClick={handleExport}
               disabled={isExporting}

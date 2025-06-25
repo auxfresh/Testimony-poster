@@ -98,10 +98,19 @@ The application is configured for deployment on Replit's autoscale platform:
 - **Hot Reload**: Vite HMR for frontend, TSX watch mode for backend
 - **Database Migrations**: Drizzle Kit for schema management
 
+## Recent Changes
+
+- June 25, 2025: Added interactive tutorial system for first-time users
+  - Tutorial overlay with step-by-step guidance through the creation process
+  - Highlights key UI elements during tutorial
+  - Local storage to track tutorial completion
+  - Tutorial restart option in header
+  - Tutorial covers all major features: input methods, customization, preview, export
+
 ## Changelog
 
-Changelog:
-- June 25, 2025. Initial setup
+- June 25, 2025: Initial setup with complete testimonial generator
+- June 25, 2025: Added tutorial system for user onboarding
 
 ## User Preferences
 

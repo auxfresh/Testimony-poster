@@ -1,10 +1,18 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Quote, ArrowLeft } from "lucide-react";
+import { Quote, ArrowLeft, HelpCircle } from "lucide-react";
 import TestimonialWizard from "@/components/testimonial-wizard";
 
 export default function Create() {
+  const [showTutorial, setShowTutorial] = useState(false);
+
+  const restartTutorial = () => {
+    localStorage.removeItem("testimonyshot-tutorial-completed");
+    setShowTutorial(true);
+    window.location.reload(); // Reload to reset tutorial state
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -26,6 +34,11 @@ export default function Create() {
                 <p className="text-sm text-gray-500">Create Your Testimonial</p>
               </div>
             </div>
+            
+            <Button variant="ghost" size="sm" onClick={restartTutorial}>
+              <HelpCircle className="w-4 h-4 mr-2" />
+              Tutorial
+            </Button>
           </div>
         </div>
       </header>
