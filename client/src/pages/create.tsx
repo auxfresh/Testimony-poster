@@ -26,7 +26,7 @@ export default function Create() {
                   Back
                 </Link>
               </Button>
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center">
                 <Quote className="text-white w-5 h-5" />
               </div>
               <div>

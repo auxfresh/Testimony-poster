@@ -11,7 +11,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center">
                 <Quote className="text-white w-5 h-5" />
               </div>
               <div>
@@ -27,7 +27,7 @@ export default function Home() {
       <section className="relative testimonial-gradient min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <div className="floating-elements"></div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
@@ -38,7 +38,7 @@ export default function Home() {
             <p className="text-xl text-white text-opacity-90 mb-12 max-w-2xl mx-auto">
               Create stunning testimonial graphics in seconds. Import from social media, customize with your brand, and export in any format.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold text-lg shadow-xl">
                 <Link href="/create">
@@ -190,7 +190,7 @@ export default function Home() {
       <section className="py-20 testimonial-gradient relative overflow-hidden">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <div className="floating-elements"></div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Ready to Turn Your Feedback Into <span className="text-yellow-300">Marketing Gold?</span>
@@ -198,7 +198,7 @@ export default function Home() {
           <p className="text-xl text-white text-opacity-90 mb-12 max-w-2xl mx-auto">
             Join thousands of businesses who are already using TestimonyShot to create stunning testimonials that convert.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100 px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl">
               <Link href="/create">
@@ -209,7 +209,7 @@ export default function Home() {
               See It In Action
             </Button>  
           </div>
-          
+
           <div className="mt-12 flex flex-wrap justify-center gap-8 text-white text-opacity-80">
             <div className="flex items-center">
               <span className="mr-2">✓</span>
