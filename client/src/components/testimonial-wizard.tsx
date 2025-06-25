@@ -397,7 +397,7 @@ export default function TestimonialWizard() {
                 </div>
 
                 {/* Font Selection */}
-                <div>
+                <div data-tutorial="font-selection">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Font Family</h3>
                   <div className="space-y-3">
                     {[
@@ -457,14 +457,14 @@ export default function TestimonialWizard() {
               <TestimonialPreview testimonial={testimonialData} />
             </div>
             
-            <div className="flex flex-col sm:flex-row justify-between mt-6 sm:mt-8 gap-4 max-w-full">
-              <Button variant="outline" onClick={handlePrevious} className="px-6 sm:px-8 py-3 sm:py-4 rounded-2xl w-full sm:w-auto order-2 sm:order-1 max-w-full">
+            <div className="flex justify-between mt-8">
+              <Button variant="outline" onClick={handlePrevious} className="px-8 py-4 rounded-2xl">
                 <ArrowLeft className="mr-2 w-4 h-4" />
                 Previous
               </Button>
-              <Button onClick={handleNext} className="px-6 sm:px-12 py-3 sm:py-4 rounded-2xl font-semibold w-full sm:w-auto order-1 sm:order-2 max-w-full overflow-hidden">
-                <span className="truncate">Continue to Export</span>
-                <ArrowRight className="ml-2 w-4 h-4 flex-shrink-0" />
+              <Button onClick={handleNext} className="px-12 py-4 rounded-2xl font-semibold">
+                Continue to Export
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </div>
           </CardContent>
